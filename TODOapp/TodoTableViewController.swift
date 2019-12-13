@@ -50,8 +50,12 @@ class TodoTableViewController: UITableViewController {
                     "createdAt": Timestamp(date: Date())
                 ]
                 todoAdd.setData(todoData)
+                //追加したデータをtodosに追加
+                let post = Todo(todoData: todoData)
+                self.todos.append(post)
+                //ビューの更新
+                self.tableView.reloadData()
             }
-            self.tableView.reloadData()
         }
         
         let cancel: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
@@ -62,7 +66,7 @@ class TodoTableViewController: UITableViewController {
         alertController.addAction(cancel)
         present(alertController, animated: true, completion: nil)
         
-        
+        self.tableView.reloadData()
     }
     
     
