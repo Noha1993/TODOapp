@@ -14,6 +14,7 @@ class TodoTableViewController: UITableViewController {
     var todos: [Todo] = []
     
     var selectedText: String? //遷移用
+    var selectedId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,7 @@ class TodoTableViewController: UITableViewController {
                 let todoData: [String: Any] = [
                     "todoID": todoID,
                     "todo": text,
+                    "date": "",
                     "createdAt": Timestamp(date: Date())
                 ]
                 todoAdd.setData(todoData)
@@ -114,17 +116,19 @@ class TodoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedText = todos[indexPath.row].todo
+        selectedId = todos[indexPath.row].todoID
         //セルの選択を解除
         tableView.deselectRow(at: indexPath, animated: true)
         //画面遷移
         performSegue(withIdentifier: "todoDetail", sender: nil)
     }
     
-    
+    //遷移するときのデータの受け渡し
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "todoDetail") {
             let secondVC: TodoDetailViewController = (segue.destination as? TodoDetailViewController)!
             
+            secondVC.selectedId = selectedId!
             secondVC.text = selectedText!
         }
     }

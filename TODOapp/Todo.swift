@@ -12,11 +12,13 @@ import Firebase
 struct Todo {
     let todoID: String
     let todo: String
+    let date: String
     let createdAt: Timestamp
     
     init(todoData: [String: Any]) {
         todoID = todoData["todoID"] as! String
         todo = todoData["todo"] as! String
+        date = todoData["date"] as! String
         createdAt = todoData["createdAt"] as! Timestamp
     }
 }
