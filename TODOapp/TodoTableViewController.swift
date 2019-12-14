@@ -13,6 +13,8 @@ class TodoTableViewController: UITableViewController {
     
     var todos: [Todo] = []
     
+    var selectedText: String? //遷移用
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -106,6 +108,29 @@ class TodoTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
         }
     }
+    
+    
+    //セルがタップされたときの動作
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedText = todos[indexPath.row].todo
+        //セルの選択を解除
+        tableView.deselectRow(at: indexPath, animated: true)
+        //画面遷移
+        performSegue(withIdentifier: "todoDetail", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "todoDetail") {
+            let secondVC: TodoDetailViewController = (segue.destination as? TodoDetailViewController)!
+            
+            secondVC.text = selectedText!
+        }
+    }
+    
+    
+    
     
     /*
      // Override to support rearranging the table view.
