@@ -13,8 +13,10 @@ class TodoTableViewController: UITableViewController {
     
     var todos: [Todo] = []
     
+    
     var selectedText: String? //遷移用
     var selectedId: String?
+    var selectedDate: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,9 +89,11 @@ class TodoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
         let todo = todos[indexPath.row]
-        cell.textLabel?.text = todo.todo
+        
+        cell.todoLabel.text = todo.todo
+        cell.timeLabel.text = todo.date
         
         return cell
     }
@@ -117,6 +121,7 @@ class TodoTableViewController: UITableViewController {
         
         selectedText = todos[indexPath.row].todo
         selectedId = todos[indexPath.row].todoID
+        selectedDate = todos[indexPath.row].date
         //セルの選択を解除
         tableView.deselectRow(at: indexPath, animated: true)
         //画面遷移
@@ -130,6 +135,7 @@ class TodoTableViewController: UITableViewController {
             
             secondVC.selectedId = selectedId!
             secondVC.text = selectedText!
+            secondVC.selectedDate = selectedDate!
         }
     }
     

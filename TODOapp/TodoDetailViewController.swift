@@ -13,6 +13,7 @@ class TodoDetailViewController: UIViewController {
     
     var text: String = ""
     var selectedId: String = ""
+    var selectedDate: String = ""
     
     var datePicker: UIDatePicker = UIDatePicker()
     
@@ -24,7 +25,7 @@ class TodoDetailViewController: UIViewController {
         super.viewDidLoad()
 
         todoText.text = text
-        // Do any additional setup after loading the view.
+        dateTextField.text = selectedDate
         
         // ピッカー設定
         //datePicker.datePickerMode = UIDatePicker.Mode.date
