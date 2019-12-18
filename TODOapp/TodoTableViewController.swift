@@ -13,7 +13,6 @@ class TodoTableViewController: UITableViewController {
     
     var todos: [Todo] = []
     
-    
     var selectedText: String? //遷移用
     var selectedId: String?
     var selectedDate: String?
@@ -24,15 +23,11 @@ class TodoTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         todos = []
-        Firestore.firestore().collection("todo").order(by: "createdAt").getDocuments { (snapshot, error) in
-            if error == nil, let snapshot = snapshot {
-                for document in snapshot.documents {
-                    let data = document.data()
-                    let post = Todo(todoData: data)
-                    self.todos.append(post)
-                }
-                self.tableView.reloadData()
-            }
+        //Firebaseからデータを取得する処理
+        let dataGet = GetData()
+        dataGet.request { getData -> Void in
+            self.todos = getData
+            self.tableView.reloadData()
         }
     }
     
@@ -98,12 +93,16 @@ class TodoTableViewController: UITableViewController {
         return cell
     }
     
+    //セルの高さ
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    // データの削除
+    //データの削除
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let todo = todos[indexPath.row]
         let deleteID = todo.todoID
@@ -114,7 +113,6 @@ class TodoTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
         }
     }
-    
     
     //セルがタップされたときの動作
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -138,33 +136,4 @@ class TodoTableViewController: UITableViewController {
             secondVC.selectedDate = selectedDate!
         }
     }
-    
-    
-    
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

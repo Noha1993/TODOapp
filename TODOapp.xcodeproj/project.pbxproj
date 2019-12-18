@@ -17,6 +17,7 @@
 		A40FF74723A345890087419C /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40FF74623A345890087419C /* Todo.swift */; };
 		A40FF74B23A47E800087419C /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40FF74A23A47E800087419C /* TodoDetailViewController.swift */; };
 		A40FF74D23A8A7C30087419C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40FF74C23A8A7C30087419C /* TableViewCell.swift */; };
+		A40FF75123AA6A0D0087419C /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40FF75023AA6A0D0087419C /* GetData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A40FF74623A345890087419C /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		A40FF74A23A47E800087419C /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
 		A40FF74C23A8A7C30087419C /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		A40FF75023AA6A0D0087419C /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		CB078166AD51C80EF7EA9CBF /* Pods_TODOapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TODOapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D663AD710E5476CCCACDC040 /* Pods-TODOapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TODOapp.debug.xcconfig"; path = "Target Support Files/Pods-TODOapp/Pods-TODOapp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 				A40FF74A23A47E800087419C /* TodoDetailViewController.swift */,
 				A40FF74623A345890087419C /* Todo.swift */,
 				A40FF74C23A8A7C30087419C /* TableViewCell.swift */,
+				A40FF75023AA6A0D0087419C /* GetData.swift */,
 				A40FF73223A1DDFF0087419C /* Main.storyboard */,
 				A40FF73523A1DE030087419C /* Assets.xcassets */,
 				A40FF73723A1DE030087419C /* LaunchScreen.storyboard */,
@@ -220,6 +223,7 @@
 				A40FF72D23A1DDFF0087419C /* AppDelegate.swift in Sources */,
 				A40FF74B23A47E800087419C /* TodoDetailViewController.swift in Sources */,
 				A40FF74723A345890087419C /* Todo.swift in Sources */,
+				A40FF75123AA6A0D0087419C /* GetData.swift in Sources */,
 				A40FF74123A2312B0087419C /* TodoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
