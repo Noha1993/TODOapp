@@ -6,7 +6,7 @@ Todo管理ができるシンプルなアプリ
 TableViewではTodoを追加、管理。<br>
 Cellをタップすると編集、時間設定ができます。<br>
 
-|Todo|追加|編集|
+|一覧|追加|編集|
 |:--:|:--:|:--:|
 |<img src="images/Screenshot/screenshot01.png">|<img src="images/Screenshot/screenshot02.png">|<img src="images/Screenshot/screenshot03.png">|
 
