@@ -89,18 +89,42 @@
 			isa = PBXGroup;
 			children = (
 				A40FF72C23A1DDFF0087419C /* AppDelegate.swift */,
-				A40FF74023A2312B0087419C /* TodoTableViewController.swift */,
-				A40FF74A23A47E800087419C /* TodoDetailViewController.swift */,
-				A40FF74623A345890087419C /* Todo.swift */,
-				A40FF74C23A8A7C30087419C /* TableViewCell.swift */,
-				A40FF75023AA6A0D0087419C /* GetData.swift */,
 				A40FF73223A1DDFF0087419C /* Main.storyboard */,
+				A40FF75423AB1FF00087419C /* Model */,
+				A40FF75323AB1FE10087419C /* View */,
+				A40FF75223AB1FD00087419C /* Controller */,
 				A40FF73523A1DE030087419C /* Assets.xcassets */,
 				A40FF73723A1DE030087419C /* LaunchScreen.storyboard */,
 				A40FF73A23A1DE030087419C /* Info.plist */,
 				A40FF74223A270AB0087419C /* GoogleService-Info.plist */,
 			);
 			path = TODOapp;
+			sourceTree = "<group>";
+		};
+		A40FF75223AB1FD00087419C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A40FF74023A2312B0087419C /* TodoTableViewController.swift */,
+				A40FF74A23A47E800087419C /* TodoDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A40FF75323AB1FE10087419C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A40FF74C23A8A7C30087419C /* TableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A40FF75423AB1FF00087419C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A40FF74623A345890087419C /* Todo.swift */,
+				A40FF75023AA6A0D0087419C /* GetData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

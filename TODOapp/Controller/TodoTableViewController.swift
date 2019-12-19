@@ -58,13 +58,16 @@ class TodoTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        
+        //キャンセルボタンが押されたときの動作
         let cancel: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        //alertControllerのtextFieldのplaceholder
         alertController.addTextField { (textField) in
             textField.placeholder = "Todoの名前を入れてください"
         }
+        
         alertController.addAction(action)
         alertController.addAction(cancel)
+        
         present(alertController, animated: true, completion: nil)
         
         self.tableView.reloadData()
